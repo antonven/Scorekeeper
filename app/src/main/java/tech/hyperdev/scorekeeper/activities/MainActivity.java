@@ -29,14 +29,14 @@ public class MainActivity extends AppCompatActivity {
          fm1 = getSupportFragmentManager();
 
             fm1.beginTransaction()
-                    .replace(R.id.frame1, ScoreFragment.newInstance("Team 1"))
+                    .replace(R.id.frame1, ScoreFragment.newInstance("Team 1", 0))
                     .addToBackStack("team1")
                     .commit();
 
 
              fm2 = getSupportFragmentManager();
                 fm2.beginTransaction()
-                        .replace(R.id.frame2, ScoreFragment.newInstance("Team 2"))
+                        .replace(R.id.frame2, ScoreFragment.newInstance("Team 2", 0))
                         .addToBackStack("team2")
                         .commit();
     }

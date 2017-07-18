@@ -18,7 +18,8 @@ import tech.hyperdev.scorekeeper.R;
  */
 public class ScoreFragment extends Fragment {
 
-    TextView teamName;
+    int teamScore;
+    TextView teamName, textScore;
     String team;
     ImageButton minus, plus;
     public ScoreFragment() {
@@ -31,25 +32,41 @@ public class ScoreFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_score, container, false);
 
         teamName = (TextView)v.findViewById(R.id.tvTeamName);
+        textScore = (TextView)v.findViewById(R.id.textScore);
         plus = (ImageButton)v.findViewById(R.id.btnPlus);
         minus = (ImageButton)v.findViewById(R.id.btnMinus);
 
 
         readBundle(getArguments());
-
         teamName.setText(team);
+
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                teamScore++;
+                textScore.setText(teamScore + "");
+            }
+        });
+
+        minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                teamScore--;
+                textScore.setText(teamScore + "");
+            }
+        });
 
 
         return v;
     }
 
-    public static ScoreFragment newInstance(String teamName) {
+    public static ScoreFragment newInstance(String teamName, int score) {
         
         Bundle args = new Bundle();
         ScoreFragment fragment = new ScoreFragment();
 
-
         args.putString("team", teamName);
+        args.putInt("score", score);
         fragment.setArguments(args);
         return fragment;
     }
