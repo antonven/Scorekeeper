@@ -18,7 +18,7 @@ import tech.hyperdev.scorekeeper.R;
  */
 public class ScoreFragment extends Fragment {
 
-    int teamScore;
+    int teamScore = 0;
     TextView teamName, textScore;
     String team;
     ImageButton minus, plus;
@@ -39,6 +39,11 @@ public class ScoreFragment extends Fragment {
 
         readBundle(getArguments());
         teamName.setText(team);
+
+        if(savedInstanceState != null) {
+            teamScore = savedInstanceState.getInt("points");
+            textScore.setText(teamScore + "");
+        }
 
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,4 +82,9 @@ public class ScoreFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("points", teamScore);
+    }
 }

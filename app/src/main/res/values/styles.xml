@@ -7,15 +7,15 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    
-    <style name="NightMode">
+
+    <style name="NightMode" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:background">@color/nightColor</item>
         <item name="android:textColor">@color/dayColor</item>
     </style>
-    
 
-    <style name="CircleButton">
-        <item name="android:fillColor">@color/colorPrimary</item>
+    <style name="CustomTheme" parent="Theme.AppCompat">
+        <item name="android:background">@color/nightColor</item>
     </style>
+
 
 </resources>
