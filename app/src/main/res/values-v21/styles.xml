@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CircleButton">
+        <item name="android:tint">@color/colorPrimary</item>
+        <item name="android:background">@drawable/border</item>
+        
+    </style>
+</resources>

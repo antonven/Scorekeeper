@@ -12,5 +12,10 @@
         <item name="android:background">@color/nightColor</item>
         <item name="android:textColor">@color/dayColor</item>
     </style>
+    
+
+    <style name="CircleButton">
+        <item name="android:fillColor">@color/colorPrimary</item>
+    </style>
 
 </resources>
